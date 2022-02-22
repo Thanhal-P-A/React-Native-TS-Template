@@ -1,0 +1,9 @@
+rootProject.name = 'RNtypescriptapptemplate'
+include ':react-native-aes-kit'
+project(':react-native-aes-kit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-aes-kit/android')
+include ':react-native-fingerprint-scanner'
+project(':react-native-fingerprint-scanner').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fingerprint-scanner/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+include ':app',':react-native-aes-kit'
+project(':react-native-aes-kit').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-aes-kit/android/app')
